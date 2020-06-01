@@ -161,13 +161,12 @@ class BanglaWord:
 		thousand = int(get_lkh_mod / 1000)
 		if thousand > 0:
 			output += self.words_in_bangla[thousand] + ' হাজার '
-		thousand_div = get_lkh_mod % 1000;
-
+		thousand_div = get_lkh_mod % 1000
 		hundred = int(thousand_div / 100)
 		if hundred > 0:
 			output += self.words_in_bangla[hundred] + ' শত '
-
 		hundred_div = int(thousand_div % 100)
+
 		if hundred_div > 0:
 			output += self.words_in_bangla[hundred_div]
 
