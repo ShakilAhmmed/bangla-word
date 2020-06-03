@@ -16,6 +16,16 @@ class BanglaWordTest(unittest.TestCase):
 		self.assertEqual("আঠারো লক্ষ পঁচানব্বই হাজার ছয় শত বাহান্ন", self.bangla_word.bangla_word_in_format(1895652))
 		self.assertNotEqual("নয় হাজার", self.bangla_word.bangla_word_in_format(5000))
 
+	def test_bangla_month(self):
+		self.assertEqual("জুলাই", self.bangla_word.bangla_month(7))
+		self.assertEqual("জানুয়ারি", self.bangla_word.bangla_month(1))
+		self.assertNotEqual("জানুয়ারি", self.bangla_word.bangla_month(3))
+
+	def test_bangla_day(self):
+		self.assertEqual("শনিবার", self.bangla_word.bangla_day(1))
+		self.assertEqual("রবিবার", self.bangla_word.bangla_day(2))
+		self.assertNotEqual("বুধবার", self.bangla_word.bangla_day(3))
+
 
 if __name__ == '__main__':
 	unittest.main()
