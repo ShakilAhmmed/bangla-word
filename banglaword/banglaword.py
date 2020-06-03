@@ -139,7 +139,15 @@ class BanglaWord:
 	def bangla_word(self, number):
 		if number == "0":
 			return "শূন্য"
-		return self.convert(str(number), self.words_in_bangla)
+		output = ''
+		if type(number) == float:
+			number = str(number).split(".")
+			output = self.bangla_word_in_format(int(number[0]))
+			if number[1]:
+				output += " দশমিক " + self.convert(str(number[1]), self.words_in_bangla)
+			return output
+		else:
+			return self.convert(str(number), self.words_in_bangla)
 
 	def bangla_word_in_format(self, number):
 		output = ''
