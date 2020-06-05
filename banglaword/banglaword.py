@@ -91,17 +91,17 @@ class BanglaWord:
 		return output
 
 	def bangla_word_in_format(self, number):
-		money_formated_bangla = ''
-		if self.zero_number_checker(number):
-			money_formated_bangla = self.zero_number_checker(number)
+		money_formatted_bangla = ''
+		if self.__zero_number_checker(number):
+			money_formatted_bangla = self.__zero_number_checker(number)
 		else:
 			if type(number) == float:
 				number = str(number).split(".")
-				money_formated_bangla = self.word_formatted(int(number[0])) + ' দশমিক ' + self.converter_number(
+				money_formatted_bangla = self.word_formatted(int(number[0])) + ' দশমিক ' + self.converter_number(
 					number[1])
 			else:
-				money_formated_bangla = self.word_formatted(number)
-		return money_formated_bangla
+				money_formatted_bangla = self.word_formatted(number)
+		return money_formatted_bangla
 
 	def converter_number(self, numbers):
 		converted_number_word = ""
@@ -112,7 +112,7 @@ class BanglaWord:
 				converted_number_word += " শূন্য"
 		return converted_number_word
 
-	def zero_number_checker(self, number):
+	def __zero_number_checker(self, number):
 		output = "শূন্য"
 		if type(number) == float:
 			number = str(number).split(".")
@@ -123,8 +123,8 @@ class BanglaWord:
 
 	def moeny_format(self, number):
 		money_formated = ''
-		if self.zero_number_checker(number):
-			money_formated = self.zero_number_checker(number) + ' টাকা '
+		if self.__zero_number_checker(number):
+			money_formated = self.__zero_number_checker(number) + ' টাকা '
 		else:
 			if type(number) == float:
 				number = str(number).split(".")
